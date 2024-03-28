@@ -24,7 +24,6 @@ public class Main {
         Indicacao indicacaoFilme2 = context.getBean(Indicacao.class,filme2, "Melhor Filme");
         Indicacao indicacaoFilme3 = context.getBean(Indicacao.class,filme3, "Melhor Filme");
         Indicacao indicacaoFilme4 = context.getBean(Indicacao.class,filme4, "Melhor Filme");
-
         Indicacao indicacaoAtor1 = context.getBean(Indicacao.class,ator1, "Melhor Ator");
         Indicacao indicacaoAtor2 = context.getBean(Indicacao.class,ator2, "Melhor Ator");
         Indicacao indicacaoAtor3 = context.getBean(Indicacao.class,ator3, "Melhor Ator");
