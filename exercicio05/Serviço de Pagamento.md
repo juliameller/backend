@@ -30,7 +30,7 @@ Atividade desenvolvida para a disciplina de Back-End;
 
 - ##### Criar usuário (POST)
   
-  - URI: /usuarios
+  - URI: POST/usuarios
   
   - Método HTTP: `POST`
   
@@ -50,21 +50,24 @@ Atividade desenvolvida para a disciplina de Back-End;
   
   - Erros esperados:
     
-    - 400 Bad Request: dados inválidos ou ausentes
-    - 409 Conflict: usuário já existe
+    - E-mail já cadastrado (400 Bad Request);
+    - Login já em uso (400 Bad Request);
+    - Campos obrigatórios não preenchidos (400 Bad Request);
+    - Formato inválido de e-mail (400 Bad Request);
+    - Formato inválido de CPF/CNPJ. (400 Bad Request).
   
   - Status Codes:
     
-    - 201 Created: usuário criado com sucesso
-    - 400 Bad Request: solicitação inválida
+    - 201 Created: usuário criado com sucesso.
+    - 400 Bad Request: solicitação inválida.
 
 - ##### Obter usuário (GET)
   
-  - URI: /usuarios/{id}
+  - URI: GET/usuarios/{usuario-id}
   
   - Método HTTP: `GET`
   
-  - Requisição esperada: Nome e e-mail do usuario
+  - Requisição esperada: dados do usuário (nome, e-mail, senha, etc.).
     
     ```json5
     {
@@ -80,16 +83,16 @@ Atividade desenvolvida para a disciplina de Back-End;
   
   - Erros esperados:
     
-    - 404 Not Found: usuário não encontrado
+    - Não existe usuário com este ID (404 Not Found).
   
   - Status Codes:
     
-    - 200 OK: solicitação bem-sucedida
-    - 404 Not Found: usuário não encontrado
+    - 200 OK: solicitação bem-sucedida.
+    - 404 Not Found: usuário não encontrado.
 
 - ##### Atualizar usuário (PUT ou PATCH)
   
-  - URI: /usuarios/{id}
+  - URI: PUT/usuarios/{usuario-id}
   
   - Método HTTP: `PUT ou PATCH`
   
@@ -109,18 +112,20 @@ Atividade desenvolvida para a disciplina de Back-End;
   
   - Erros esperados:
     
-    - 400 Bad Request: dados inválidos ou ausentes
-    - 404 Not Found: usuário não encontrado
+    - E-mail já cadastrado (400 Bad Request);
+    - Campos obrigatórios não preenchidos (400 Bad Request);
+    - Formato inválido de e-mail (400 Bad Request);
+    - Formato inválido de CPF/CNPJ (400 Bad Request);
+    - E-mail não validado.
   
   - Status Codes:
     
-    - 200 OK: usuário atualizado com sucesso
-    - 400 Bad Request: solicitação inválida
-    - 404 Not Found: usuário não encontrado
+    - 200 OK: usuário atualizado com sucesso.
+    - 400 Bad Request: solicitação inválida.
 
 - ##### Excluir usuário (DELETE)
   
-  - URI: /usuarios/{id}
+  - URI: DELETE/usuarios/{usuario-id}
   
   - Método HTTP: `DELETE`
   
@@ -135,12 +140,12 @@ Atividade desenvolvida para a disciplina de Back-End;
   
   - Erros esperados:
     
-    - 404 Not Found: usuário não encontrado
+    - Não existe usuário com este ID (404 Not Found).
   
   - Status Codes:
     
-    - 204 No Content: usuário excluído com sucesso
-    - 404 Not Found: usuário não encontrado
+    - 204 No Content: usuário excluído com sucesso.
+    - 404 Not Found: usuário não encontrado.
 
 ---
 
@@ -148,7 +153,7 @@ Atividade desenvolvida para a disciplina de Back-End;
 
 - ##### Realizar pagamento (POST)
   
-  - URI: /pagamentos
+  - URI: POST/pagamentos/{usuario-id}
   
   - Método HTTP: `POST`
   
@@ -162,19 +167,19 @@ Atividade desenvolvida para a disciplina de Back-End;
     ```
   
   - Erros esperados:
-  
-  - - 400 Bad Request: dados inválidos ou ausentes
-    - 402 Payment Required: pagamento não autorizado devido a saldo insuficiente
+
+    - Saldo insuficiente (402 Payment Required);
+    - Campos obrigatórios não preenchidos (400 Bad Request).
   
   - Status Codes:
     
-    - 201 Created: pagamento realizado com sucesso
-    - 400 Bad Request: solicitação inválida
-    - 402 Payment Required: saldo insuficiente
+    - 201 Created: pagamento realizado com sucesso.
+    - 400 Bad Request: solicitação inválida.
+    - 402 Payment Required: saldo insuficiente.
 
 - ##### Obter pagamento (GET)
   
-  - URI: /pagamentos/{id}
+  - URI: GET/pagamentos/{usuario-id}/{pagamento-id}
   
   - Método HTTP: `GET`
   
@@ -190,20 +195,20 @@ Atividade desenvolvida para a disciplina de Back-End;
   
   - Erros esperados:
     
-    - 404 Not Found: pagamento não encontrado
+    - Não existe pagamento com este ID (404 Not Found).
   
   - Status Codes:
     
-    - 200 OK: solicitação bem-sucedida
-    - 404 Not Found: pagamento não encontrado
+    - 200 OK: solicitação bem-sucedida.
+    - 404 Not Found: pagamento não encontrado.
 
 - ##### Cancelar pagamento (DELETE)
   
-  - URI: /pagamentos/{id}
+  - URI: DELETE/pagamentos/{usuario-id}/{pagamento-id}
   
   - Método HTTP: `DELETE`
   
-  - Requisição esperada: Status do pagamento, valor e metodo
+  - Requisição esperada: Status do pagamento, valor e método
     
     ```json5
     {
@@ -216,9 +221,9 @@ Atividade desenvolvida para a disciplina de Back-End;
   
   - Erros esperados:
     
-    - 404 Not Found: pagamento não encontrado
+    - Não existe pagamento com este ID (404 Not Found).
   
   - Status Codes:
     
-    - 204 No Content: pagamento cancelado com sucesso
-    - 404 Not Found: pagamento não encontrado
+    - 204 No Content: pagamento cancelado com sucesso.
+    - 404 Not Found: pagamento não encontrado.
