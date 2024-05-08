@@ -1,4 +1,4 @@
-# Serviço: Sistema de Pagamento (ex.: Paypal)
+# Serviço: Sistema de Pagamento
 
 Atividade desenvolvida para a disciplina de Back-End;
 
@@ -50,9 +50,9 @@ Atividade desenvolvida para a disciplina de Back-End;
   
   - Erros esperados:
     
-    - E-mail já cadastrado (400 Bad Request);
-    - Login já em uso (400 Bad Request);
-    - Campos obrigatórios não preenchidos (400 Bad Request);
+    - E-mail já cadastrado (409 Conflict);
+    - Login já em uso (409 Conflict);
+    - Campos obrigatórios não preenchidos (409 Conflict);
     - Formato inválido de e-mail (400 Bad Request);
     - Formato inválido de CPF/CNPJ. (400 Bad Request).
   
@@ -92,9 +92,9 @@ Atividade desenvolvida para a disciplina de Back-End;
 
 - ##### Atualizar usuário (PUT ou PATCH)
   
-  - URI: PUT/usuarios/{usuario-id}
+  - URI: PATCH/usuarios/{usuario-id}
   
-  - Método HTTP: `PUT ou PATCH`
+  - Método HTTP: `PATCH`
   
   - Requisição esperada: Novos dados atualizados
     
@@ -112,11 +112,11 @@ Atividade desenvolvida para a disciplina de Back-End;
   
   - Erros esperados:
     
-    - E-mail já cadastrado (400 Bad Request);
-    - Campos obrigatórios não preenchidos (400 Bad Request);
+    - E-mail já cadastrado (409 Conflict);
+    - Campos obrigatórios não preenchidos (409 Conflict);
     - Formato inválido de e-mail (400 Bad Request);
     - Formato inválido de CPF/CNPJ (400 Bad Request);
-    - E-mail não validado.
+    - E-mail não validado (409 Conflict).
   
   - Status Codes:
     
@@ -168,8 +168,8 @@ Atividade desenvolvida para a disciplina de Back-End;
   
   - Erros esperados:
 
-    - Saldo insuficiente (402 Payment Required);
-    - Campos obrigatórios não preenchidos (400 Bad Request).
+    - Saldo insuficiente (409 Conflict);
+    - Campos obrigatórios não preenchidos (409 Conflict).
   
   - Status Codes:
     
