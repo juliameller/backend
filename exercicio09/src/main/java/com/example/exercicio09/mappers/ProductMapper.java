@@ -1,7 +1,7 @@
-package com.example.exercicio9.mappers;
+package com.example.exercicio09.mappers;
 
-import com.example.exercicio9.dtos.ProductResponseDto;
-import com.example.exercicio9.models.Product;
+import com.example.exercicio09.dtos.ProductResponseDto;
+import com.example.exercicio09.models.Product;
 import org.springframework.stereotype.Component;
 
 @Component

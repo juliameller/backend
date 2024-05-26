@@ -1,4 +1,4 @@
-package com.example.exercicio9.models;
+package com.example.exercicio09.models;
 
 import jakarta.persistence.*;
 
@@ -37,9 +37,8 @@ public class Product {
         this.price = price;
     }
 
-    public Product(UUID id, String name, Double price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-    }
+//    public Product(String name, Double price) {
+//        this.name = name;
+//        this.price = price;
+//    }
 }

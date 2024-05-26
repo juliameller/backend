@@ -1,6 +1,6 @@
-package com.example.exercicio9.exception;
+package com.example.exercicio09.exception;
 
-import com.example.exercicio9.dtos.ApiExceptionDto;
+import com.example.exercicio09.dtos.ApiExceptionDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

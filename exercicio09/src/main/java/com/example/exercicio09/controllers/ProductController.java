@@ -1,8 +1,8 @@
-package com.example.exercicio9.controllers;
+package com.example.exercicio09.controllers;
 
-import com.example.exercicio9.dtos.ProductRequestDto;
-import com.example.exercicio9.dtos.ProductResponseDto;
-import com.example.exercicio9.services.ProductService;
+import com.example.exercicio09.dtos.ProductRequestDto;
+import com.example.exercicio09.dtos.ProductResponseDto;
+import com.example.exercicio09.services.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,18 +18,26 @@ public class ProductController {
     ProductService productService;
 
     @GetMapping
-    public List<ProductResponseDto> getAllProducts() {
-        return productService.getAllProducts();
+    @ResponseStatus(HttpStatus.OK)
+    public List<ProductResponseDto> getAllProducts(
+            @RequestParam (defaultValue = "Name") List<String> sortBy) {
+        return productService.getAllProducts(sortBy);
+    }
+
+    @GetMapping("/{name}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ProductResponseDto> getProductsByName(@PathVariable String name) {
+        return productService.getProductsByName(name);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ProductResponseDto saveProduct(@RequestBody @Valid ProductRequestDto productRequestDto){
+    public ProductResponseDto createProduct(@RequestBody @Valid ProductRequestDto productRequestDto){
         return productService.createProduct(productRequestDto);
     }
 
     @PatchMapping("/{id}")
-    public ProductResponseDto patchProduct(@PathVariable UUID id, @RequestBody @Valid ProductRequestDto productRequestDto) {
+    public ProductResponseDto updateProduct(@PathVariable UUID id, @RequestBody @Valid ProductRequestDto productRequestDto) {
         return productService.updateProduct(id, productRequestDto);
     }
 

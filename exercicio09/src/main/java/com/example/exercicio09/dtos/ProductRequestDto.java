@@ -1,4 +1,4 @@
-package com.example.exercicio9.dtos;
+package com.example.exercicio09.dtos;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;

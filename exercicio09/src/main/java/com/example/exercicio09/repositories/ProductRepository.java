@@ -1,7 +1,7 @@
-package com.example.exercicio9.repositories;
+package com.example.exercicio09.repositories;
 
 
-import com.example.exercicio9.models.Product;
+import com.example.exercicio09.models.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
