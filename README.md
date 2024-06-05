@@ -36,16 +36,6 @@ Crie um novo projeto usando o Spring Framework que implemente um **service** cha
 
 Um ator ou filme não poderá ser indicado um atributo `elegivel` for falso. Para cada nova indicação, um atributo `numeroDeIndicacoes` deve ser incrementado. Ambos os atributos devem ser manipulado por meio de uma interface chamada `Indicavel`.
 
----
-
-![bg fit](assets/exercicio03_class.svg)
-
----
-
-![bg fit](assets/exercicio03_activity.svg)
-
----
-
 Todos os atributos devem ter sua visibilidade `private`. Crie getters e setters para os atributos que necessitem de acesso/modificação.
 
 O projeto deverá seguir a estrutura dos diagramas UML, porém alterações que incluam funcionalidades ou alterem o nome das classes são permitidas desde que mantenham o formato da implementação.
@@ -68,14 +58,14 @@ Crie um web service capaz de prover através de requisição GET uma mensagem co
 
 ## Exercício 05
 
-Crie um documento (formatos ODX, DOC, DOCX ou MD) contendo a modelagem proposta pela Fase 2 da [Atividade da Aula 13](../aulas/aula13/aula13-atividade01.pdf). Esse documento deverá conter uma descrição da modelagem realizada, bem como todas as rotas/endpoints definidos pelo grupo.Para cada um dos recursos, deve ser especificado um conjunto de métodos necessários para realizar **operações CRUD**. Cada método deverá incluir: **URI**, **Método HTTP**, **Requisição esperada**, **Erros esperados** e **Status Codes**.
+Crie um documento (formatos ODX, DOC, DOCX ou MD) contendo a modelagem proposta pela Fase 2 da Atividade da Aula 13. Esse documento deverá conter uma descrição da modelagem realizada, bem como todas as rotas/endpoints definidos pelo grupo.Para cada um dos recursos, deve ser especificado um conjunto de métodos necessários para realizar **operações CRUD**. Cada método deverá incluir: **URI**, **Método HTTP**, **Requisição esperada**, **Erros esperados** e **Status Codes**.
 
 
 ---
 
 ## Exercício 06
 
-Utilizando os modelos do exercício anterior e da Fase 3 da [Atividade da Aula 13](../aulas/aula13/aula13-atividade01.pdf). Implemente um controlador de uma aplicação Spring que faça o mapeamento dos recursos desenvolvidos.
+Utilizando os modelos do exercício anterior e da Fase 3 da Atividade da Aula 13. Implemente um controlador de uma aplicação Spring que faça o mapeamento dos recursos desenvolvidos.
 
 * O desenvolvimento deverá ser feito utilizando Spring Boot.
 * Apenas um controller é necessário
